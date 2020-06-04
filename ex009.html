@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NACIONALIDADE</title>
+</head>
+<body>
+    <h1>Consulta Nacionalidade</h1>
+    Informe sua nacionalidade: 
+    <input type="text" id="txtnome" name="txtnome">
+    <input type="button" value="Consultar" onclick="consulta()">
+    <div id="cons">
+
+    </div>
+    <script>
+        function consulta() {
+            var nac = window.document.querySelector("input#txtnome")
+            var cons = window.document.querySelector("div#cons")
+            cons.innerHTML = `Sua nacionalidade é ${nac.value}.`            
+            if (nac.value.toUpperCase() != 'BRASIL') {
+                cons.innerHTML += '<p>Você é estrangeiro</p>'
+            } else {
+                cons.innerHTML += '<p>Você é brasileiro</p>'
+            }
+        }
+    </script>
+    
+</body>
+</html>
